@@ -75,9 +75,10 @@ class GamePlayer extends SimplePlayer with ObjectCollision, UseBarLife{
 
   @override
   void die() {
+    // I don't call super.die(); because when die
+    // just move the player back to spawn
     position = defaultPlayerSpawnPoint;
     addLife(999.0);
-    super.die();
   }
 
   void _addAttackAnimation() {
