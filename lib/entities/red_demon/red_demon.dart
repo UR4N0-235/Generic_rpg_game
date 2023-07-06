@@ -79,6 +79,7 @@ class RedDemon extends SimpleEnemy
   void die() {
     canMove = false;
     removeFromParent();
+    actualRedDemonsLive--;
     super.die();
   }
 

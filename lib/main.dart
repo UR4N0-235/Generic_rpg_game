@@ -4,7 +4,12 @@ import 'package:generic_rpg_game/entities/player/player.dart';
 import 'package:flutter/foundation.dart';
 import 'package:generic_rpg_game/entities/red_demon/red_demon.dart';
 
+import 'entities/red_demon/red_demon_spawner.dart';
+
 const double tileSize = 16.0;
+Vector2 defaultPlayerSpawnPoint = Vector2(13*tileSize,16*tileSize);
+int maxRedDemons = 5;
+int actualRedDemonsLive = 0;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -58,10 +63,10 @@ class Starter extends StatelessWidget {
         'tiled/map.json',
         forceTileSize: Vector2(32, 32),
         objectsBuilder: {
-          'RedDemon': (properties)=> RedDemon(properties.position),
+          'RedDemonSpawner': (properties)=> RedDemonSpawner(properties.position, properties.size),
         }
       ),
-      player: GamePlayer(Vector2(13*tileSize,16*tileSize)),
+      player: GamePlayer(defaultPlayerSpawnPoint),
       // showCollisionArea: true,
       cameraConfig: CameraConfig(moveOnlyMapArea: true, zoom: 1.5),
       backgroundColor: const Color.fromARGB(255, 10, 53, 89),

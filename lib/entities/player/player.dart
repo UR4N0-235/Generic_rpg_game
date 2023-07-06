@@ -75,7 +75,8 @@ class GamePlayer extends SimplePlayer with ObjectCollision, UseBarLife{
 
   @override
   void die() {
-    removeFromParent();
+    position = defaultPlayerSpawnPoint;
+    addLife(999.0);
     super.die();
   }
 
