@@ -1,10 +1,10 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
+import 'package:generic_rpg_game/entities/enemy/red_demon/red_demon_spawner.dart';
 import 'package:generic_rpg_game/entities/player/player.dart';
 import 'package:flutter/foundation.dart';
-import 'package:generic_rpg_game/entities/red_demon/red_demon.dart';
+import 'package:generic_rpg_game/menu.dart';
 
-import 'entities/red_demon/red_demon_spawner.dart';
 
 const double tileSize = 16.0;
 Vector2 defaultPlayerSpawnPoint = Vector2(13*tileSize,16*tileSize);
@@ -18,19 +18,21 @@ void main() async {
     await Flame.device.fullScreen();
   }
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Mini Fantasy',
+      title: 'Generic RPG game',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Starter(),
+      home: const Menu(),
     );
   }
 }

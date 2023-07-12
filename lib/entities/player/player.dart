@@ -67,7 +67,6 @@ class GamePlayer extends SimplePlayer with ObjectCollision, UseBarLife{
         initVelocityTop: -2,
         config: const TextStyle(color: Colors.white, fontSize: tileSize / 2),
       );
-
       idle();
     }
     super.receiveDamage(attacker, damage, identify);

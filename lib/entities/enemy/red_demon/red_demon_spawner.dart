@@ -3,7 +3,7 @@ import 'dart:math';
 // import 'dart:developer' as developer;
 
 import 'package:bonfire/bonfire.dart';
-import 'package:generic_rpg_game/entities/red_demon/red_demon.dart';
+import 'package:generic_rpg_game/entities/enemy/red_demon/red_demon.dart';
 import 'package:generic_rpg_game/main.dart';
 
 class RedDemonSpawner extends GameDecoration {
@@ -21,7 +21,7 @@ class RedDemonSpawner extends GameDecoration {
 
   void _starTimeAddNewMonsters() {
     async.Timer.periodic(
-      const Duration(milliseconds: 100),
+      const Duration(milliseconds: 5000),
           (timer) {
         if (actualRedDemonsLive < maxRedDemons) {
           // developer.log('new mob at ${mobPosition.x} ${mobPosition.y}');

@@ -1,6 +1,6 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
-import 'package:generic_rpg_game/entities/red_demon/red_demon_sprite_sheet.dart';
+import 'package:generic_rpg_game/entities/enemy/red_demon/red_demon_sprite_sheet.dart';
 import 'package:generic_rpg_game/main.dart';
 
 class RedDemon extends SimpleEnemy
