@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   bonfire: ^2.12.5
+  flame_splash_screen: ^0.1.0
 
 dev_dependencies:
   flutter_test:
@@ -63,6 +64,8 @@ flutter:
   assets:
      - assets/images/
      - assets/images/tiled/
+     - assets/images/interface/
+     - assets/images/menu/
      - assets/images/sprites/
      - assets/images/sprites/demons/
 

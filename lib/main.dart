@@ -8,8 +8,11 @@ import 'package:generic_rpg_game/menu.dart';
 
 const double tileSize = 16.0;
 Vector2 defaultPlayerSpawnPoint = Vector2(13*tileSize,16*tileSize);
+
 int maxRedDemons = 5;
 int actualRedDemonsLive = 0;
+int actualNecromancersLive = 0;
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -53,11 +56,14 @@ class Starter extends StatelessWidget {
         ),
       ),
       joystick: Joystick(
-        directional: JoystickDirectional(),
+        directional: JoystickDirectional(
+          spriteKnobDirectional: Sprite.load("interface/joystick.png")
+        ),
         actions: [
           JoystickAction(
             actionId: 1,
             margin: const EdgeInsets.all(65),
+            sprite: Sprite.load("interface/attack.png")
           )
         ],
       ),
