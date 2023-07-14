@@ -1,10 +1,9 @@
 import 'dart:async' as async;
 import 'dart:math';
-// import 'dart:developer' as developer;
 
 import 'package:bonfire/bonfire.dart';
 import 'package:generic_rpg_game/entities/enemy/red_demon/red_demon.dart';
-import 'package:generic_rpg_game/main.dart';
+import 'package:generic_rpg_game/utils/variables.dart';
 
 class RedDemonSpawner extends GameDecoration {
 

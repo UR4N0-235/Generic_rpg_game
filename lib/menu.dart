@@ -2,8 +2,8 @@ import 'dart:async' as async;
 
 import 'package:flame_splash_screen/flame_splash_screen.dart';
 import 'package:flutter/material.dart';
-
-import 'main.dart';
+import 'package:generic_rpg_game/game_starter.dart';
+import 'package:generic_rpg_game/utils/sounds.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -18,8 +18,13 @@ class _MenuState extends State<Menu> {
   late async.Timer _timer;
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   void dispose() {
-    // Sounds.stopBackgroundSound();
+    Sounds.stopBackgroundSound();
     _timer.cancel();
     super.dispose();
   }
@@ -39,7 +44,8 @@ class _MenuState extends State<Menu> {
           Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("assets/images/menu/menu_background.png"), fit: BoxFit.fill)),
+                    image: AssetImage("assets/images/menu/menu_background.png"),
+                    fit: BoxFit.fill)),
           ),
           Center(
             child: SingleChildScrollView(
@@ -93,6 +99,7 @@ class _MenuState extends State<Menu> {
       body: FlameSplashScreen(
           theme: FlameSplashTheme.dark,
           onFinish: (BuildContext context) => setState(() {
+                Sounds.menuSound();
                 showSplash = false;
               })),
     );
